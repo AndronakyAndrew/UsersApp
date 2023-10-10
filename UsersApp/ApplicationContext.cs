@@ -16,7 +16,6 @@ namespace UsersApp
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           
             optionsBuilder.UseNpgsql("Host=192.168.100.16;Port=5433;Database=UsersApp;Username=postgres;Password=1602");
         }
     }
