@@ -22,5 +22,10 @@ namespace UsersApp
             this.Password = password;
         }
 
+        public override string ToString()
+        {
+            return "Пользователь: " + Login + ". E-mail: " + Email;
+        }
+        
     }
 }

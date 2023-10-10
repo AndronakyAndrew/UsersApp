@@ -70,12 +70,24 @@ namespace UsersApp
                 emailbox.Background = Brushes.Transparent;
 
                 MessageBox.Show("You have successfully registered");
+
                 
                 User user = new User(login, email, password);
 
                 db.Users.Add(user);
                 db.SaveChanges();
+
+                AuthWindow authWindow = new AuthWindow();
+                authWindow.Show();
+                this.Hide();
             }
+        }
+
+        private void Button_Window_Auth_Click(object sender, RoutedEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            this.Hide();
         }
     }
 }
