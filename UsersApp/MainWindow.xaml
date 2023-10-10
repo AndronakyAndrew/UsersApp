@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UsersApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="UsersApp" Height="500" Width="550">
+    <Grid Background="#FFA500">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="40" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="45" Color="Black" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Hello, You!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
 
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Left" Content="Register" />
+                    <Button HorizontalAlignment="Right" Content="Login" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+
+                <TextBox x:Name="loginbox" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox x:Name="passwordbox" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <PasswordBox x:Name="passwordbox_2" materialDesign:HintAssist.Hint="Введите пароль еще раз" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <TextBox x:Name="emailbox" materialDesign:HintAssist.Hint="Введите e-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <Button Content="Registration" Margin="0 20" Click="Button_Reg_Click"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
